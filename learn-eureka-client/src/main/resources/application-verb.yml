@@ -1,0 +1,10 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: learn-eureka-client-verb
+
+uname: leanr-spring-cloud-8086
+words: 你v,我v,他v
+

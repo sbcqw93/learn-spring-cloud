@@ -1,0 +1,9 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: learn-eureka-client-adjective
+
+uname: leanr-spring-cloud-8088
+words: 你a,我a,他a

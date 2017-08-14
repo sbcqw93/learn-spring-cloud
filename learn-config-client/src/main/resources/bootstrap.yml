@@ -1,0 +1,22 @@
+server:
+  port: 8082
+
+spring:
+  #application:
+  #  name: foo
+  #profiles:
+  #  active: development
+  cloud:
+    config:
+      #uri: http://127.0.0.1:8888
+      uri: http://user:123456@127.0.0.1:8888
+      name: foo
+      profile: development
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: 123456
+

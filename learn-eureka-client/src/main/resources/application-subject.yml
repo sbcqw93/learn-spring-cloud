@@ -1,0 +1,9 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: learn-eureka-client-subject
+
+uname: leanr-spring-cloud-8085
+words: 你s,我s,他s

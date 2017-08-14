@@ -1,0 +1,21 @@
+server:
+  #port: 8083
+  port: ${server.peer1.port}
+
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    service-url:
+      defaultZone: http://user:123456@peer2:8084/eureka
+      #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+      #defaultZone: http://${security.user.name}:${security.user.password}@${eureka.instance.hostname}:${server.port}/eureka
+    fetch-registry: true
+    register-with-eureka: true
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: 123456

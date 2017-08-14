@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: flearn-eureka-server
+  cloud:
+    config:
+      #uri: http://127.0.0.1:8888
+      uri: http://user:123456@127.0.0.1:8888
+      name: foo
+      profile: development
+eureka:
+  instance:
+    instance-id:
