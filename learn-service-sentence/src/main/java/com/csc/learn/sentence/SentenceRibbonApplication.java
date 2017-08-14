@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,19 +18,20 @@ import java.util.List;
 
 /**
  * Hello world!<br>
- *  使用DiscoveryClient访问另一个服务API
+ *  使用Ribbon（负载均衡）访问另一个服务API
  */
-//@SpringBootApplication
-//@EnableEurekaClient
-//@RestController
+@SpringBootApplication
+@EnableEurekaClient
+@RestController
 //@EnableDiscoveryClient
-public class SentenceApplication {
+public class SentenceRibbonApplication {
 
     private String username = "user";
     private String password = "123456";
 
     @Autowired
-    private DiscoveryClient discoveryClient;
+    //private DiscoveryClient discoveryClient;
+    private LoadBalancerClient loadBalancerClient;
 
     @ResponseBody
     @RequestMapping("/")
@@ -42,18 +44,13 @@ public class SentenceApplication {
 
     public String getWord(String service) {
         try {
-            System.out.println("=======================all services: " + discoveryClient.getServices());
-            List<ServiceInstance> list = discoveryClient.getInstances(service);
-            System.out.println("=======================service instance size: " + list.size());
-            if (list != null && list.size() > 0) {
-                URI uri = list.get(0).getUri();
-                if (uri != null) {
-                    RestTemplate restTemplate  = null;
-                    RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
-                    restTemplate = restTemplateBuilder.basicAuthorization(username, password).build();
-                    return restTemplate.getForObject(uri, String.class);
-                    // return (new RestTemplate()).getForObject(uri, String.class);
-                }
+            ServiceInstance serviceInstance = loadBalancerClient.choose(service);
+            URI uri = serviceInstance.getUri();
+            if (uri != null) {
+                RestTemplate restTemplate  = null;
+                RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
+                restTemplate = restTemplateBuilder.basicAuthorization(username, password).build();
+                return restTemplate.getForObject(uri, String.class);
             }
             return "Not found service instance.";
         }catch (Exception e){
@@ -63,6 +60,6 @@ public class SentenceApplication {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(SentenceApplication.class, args);
+        SpringApplication.run(SentenceRibbonApplication.class, args);
     }
 }

@@ -7,6 +7,3 @@ spring:
       uri: http://user:123456@127.0.0.1:8888
       name: foo
       profile: development
-eureka:
-  instance:
-    instance-id:
