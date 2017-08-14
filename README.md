@@ -15,3 +15,9 @@ github配置文件 [[config-repo]](https://github.com/sbcqw93/learn-spring-confi
 >     "D:\Program Files\Java\jdk1.8.0_131\bin\java" -jar target\learn-eureka-client.jar --spring.profiles.active=verb
 >     "D:\Program Files\Java\jdk1.8.0_131\bin\java" -jar target\learn-eureka-client.jar --spring.profiles.active=adjective
 >     "D:\Program Files\Java\jdk1.8.0_131\bin\java" -jar target\learn-eureka-client.jar --spring.profiles.active=noun
+
+### RestTemplate调用RestFul Api（安全认证）
+>     learn-service-sentence
+>     RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
+>     restTemplateBuilder.basicAuthorization(username, password).build();
+注：`username, password可以添加到config配置中心`

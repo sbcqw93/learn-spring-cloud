@@ -12,7 +12,7 @@ import java.net.URISyntaxException;
 public class InvokeApi {
 
     public static void main(String[] args) throws URISyntaxException {
-        URI uri = new URI("http://learn.csc86.com:8080");
+        URI uri = new URI("http://localhost:8080");
 
         RestTemplate restTemplate = null;
         RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
