@@ -20,9 +20,9 @@ import java.util.List;
  * Hello world!<br>
  *  使用Ribbon（负载均衡）访问另一个服务API
  */
-@SpringBootApplication
-@EnableEurekaClient
-@RestController
+//@SpringBootApplication
+//@EnableEurekaClient
+//@RestController
 //@EnableDiscoveryClient
 public class SentenceRibbonApplication {
 
