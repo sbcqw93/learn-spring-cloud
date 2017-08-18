@@ -1,0 +1,33 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: learn-service-bus
+  cloud:
+    config:
+      #uri: http://127.0.0.1:8888
+      uri: http://user:123456@127.0.0.1:8888
+      name: foo
+      profile: development
+  rabbitmq:
+    host: 192.168.1.94
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:123456@peer1:8084/eureka,http://user:123456@peer2:8084/eureka
+    instance:
+        instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: 123456
+
+

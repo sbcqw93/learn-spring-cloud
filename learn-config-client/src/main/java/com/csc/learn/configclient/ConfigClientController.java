@@ -16,7 +16,7 @@ public class ConfigClientController {
 
     @ResponseBody
     @RequestMapping("/bar")
-    public String shwoBar() {
+    public String showBar() {
         return "变量bar的值是：" + bar;
     }
 }

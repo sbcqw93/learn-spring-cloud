@@ -10,8 +10,13 @@
     <module>learn-config-client</module>
     <module>learn-eureka-server</module>
     <module>learn-eureka-client</module>
-      <module>learn-service-sentence</module>
-      <module>learn-boot-server</module>
+    <module>learn-service-discovery</module>
+    <module>learn-service-ribbon</module>
+    <module>learn-service-feign</module>
+    <module>learn-service-hystrix</module>
+    <module>learn-service-bus</module>
+    <module>learn-service-zuul</module>
+    <module>learn-boot-server</module>
   </modules>
   <packaging>pom</packaging>
 
