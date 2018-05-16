@@ -9,7 +9,8 @@
 
     <groupId>com.csc.learn.bootserver</groupId>
     <artifactId>learn-boot-server</artifactId>
-    <packaging>jar</packaging>
+    <!--<packaging>jar</packaging>-->
+    <packaging>war</packaging>
 
     <name>learn-boot-server</name>
     <url>http://maven.apache.org</url>
@@ -19,6 +20,13 @@
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
