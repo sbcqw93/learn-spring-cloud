@@ -17,6 +17,7 @@
     <module>learn-service-bus</module>
     <module>learn-service-zuul</module>
     <module>learn-boot-server</module>
+    <module>learn-swagger</module>
   </modules>
   <packaging>pom</packaging>
 
