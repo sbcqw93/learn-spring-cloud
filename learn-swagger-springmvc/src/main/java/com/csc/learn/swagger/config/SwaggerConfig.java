@@ -2,9 +2,11 @@ package com.csc.learn.swagger.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -16,7 +18,6 @@ import springfox.documentation.spring.web.plugins.Docket;
 /**
  * Created by Administrator on 2018/6/12 0012.
  */
-@EnableWebMvc
 @Configuration
 @PropertySource("classpath:swagger.properties")
 public class SwaggerConfig {
@@ -40,6 +41,8 @@ public class SwaggerConfig {
 
     @Value("${swagger.version}")
     private String version;
+
+
 
     @Bean
     public Docket createRedisApi() {

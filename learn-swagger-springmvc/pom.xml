@@ -215,11 +215,6 @@
       <version>4.3.2</version>
     </dependency>
     <dependency>
-      <groupId>com.csc.order</groupId>
-      <artifactId>order-client</artifactId>
-      <version>3.4.1-20170330.052239-1</version>
-    </dependency>
-    <dependency>
       <groupId>org.codehaus.jackson</groupId>
       <artifactId>jackson-core-asl</artifactId>
       <version>${org.codehaus.jackson.version}</version>
@@ -350,6 +345,26 @@
   </dependencies>
 
   <build>
-    <finalName>learn-swagger-springmvc</finalName>
+    <finalName>${project.artifactId}</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.mortbay.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <configuration>
+          <webApp>
+            <contextPath>/</contextPath>
+          </webApp>
+          <stopKey>web</stopKey>
+          <stopPort>9999</stopPort>
+          <scanIntervalSeconds>10</scanIntervalSeconds>
+          <connectors>
+            <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+              <port>8088</port>
+              <maxIdleTime>60000</maxIdleTime>
+            </connector>
+          </connectors>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>

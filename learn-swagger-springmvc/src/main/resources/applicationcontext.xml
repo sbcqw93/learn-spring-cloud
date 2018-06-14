@@ -13,9 +13,9 @@
 	<bean
 		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
 
-	<!--<mvc:default-servlet-handler />-->
-	<!--<mvc:annotation-driven/>-->
+	<mvc:default-servlet-handler />
+	<mvc:annotation-driven/>
 
-	<mvc:resources location="classpath*:/META-INF/resources/" mapping="swagger-ui.html"/>
-	<mvc:resources location="classpath*:/META-INF/resources/webjars/" mapping="/webjars/**"/>
+	<mvc:resources location="classpath:/META-INF/resources/" mapping="swagger-ui.html"/>
+	<mvc:resources location="classpath:/META-INF/resources/webjars/" mapping="/webjars/**"/>
 </beans>
