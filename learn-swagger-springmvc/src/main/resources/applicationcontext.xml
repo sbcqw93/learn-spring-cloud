@@ -12,6 +12,8 @@
     <!--<context:component-scan base-package="springfox"/>-->
     <!--<context:component-scan base-package="springfox.documentation.swagger2.web"/>-->
 
+    <context:property-placeholder location="classpath:swagger.properties" />
+
     <!--<mvc:default-servlet-handler />-->
     <mvc:annotation-driven />
 

@@ -21,7 +21,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-@PropertySource("classpath:swagger.properties")
+//PropertySource没有生效,读取不了变量,使用context:property-placeholder可以
+//@PropertySource("classpath:swagger.properties")
 public class SwaggerConfig {
     @Value("${swagger.basePackage}")
     private String basePackage;
