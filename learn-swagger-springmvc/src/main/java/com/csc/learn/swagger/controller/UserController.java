@@ -16,8 +16,9 @@ import org.springframework.web.bind.annotation.*;
  * Created by Administrator on 2018/6/12 0012.
  * paramType 参数类型 body、path、query、header、form中的一种
  */
+@Controller
+@RequestMapping(value = "user")
 @Api(description = "用户接口")
-@Controller(value = "user")
 public class UserController {
 
     @Autowired

@@ -14,8 +14,9 @@ import org.springframework.web.bind.annotation.*;
 /**
  * Created by Administrator on 2018/6/13 0013.
  */
+@RestController
+@RequestMapping(value = "order")
 @Api(description = "订单接口")
-@RestController(value = "order")
 public class OrderController {
 
     @Autowired
