@@ -14,11 +14,13 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Created by Administrator on 2018/6/12 0012.
  */
 @Configuration
+@EnableSwagger2
 @PropertySource("classpath:swagger.properties")
 public class SwaggerConfig {
     @Value("${swagger.basePackage}")
@@ -41,8 +43,6 @@ public class SwaggerConfig {
 
     @Value("${swagger.version}")
     private String version;
-
-
 
     @Bean
     public Docket createRedisApi() {
