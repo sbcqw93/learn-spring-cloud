@@ -3,9 +3,11 @@ package com.csc.learn.swagger.controller;
 import com.csc.learn.swagger.data.User;
 import com.csc.learn.swagger.service.UserService;
 import com.csc.learn.swagger.support.ResJson;
-import io.swagger.annotations.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 

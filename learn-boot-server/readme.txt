@@ -3,7 +3,7 @@
 2、使用第三方容器
     1、pom
     <packaging>war</packaging>
-    2、pom
+    2、pom，将依赖scope变成provided
     <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-tomcat</artifactId>

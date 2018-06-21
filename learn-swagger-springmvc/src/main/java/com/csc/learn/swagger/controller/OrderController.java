@@ -1,7 +1,6 @@
 package com.csc.learn.swagger.controller;
 
 import com.csc.learn.swagger.data.Order;
-import com.csc.learn.swagger.data.User;
 import com.csc.learn.swagger.service.OrderService;
 import com.csc.learn.swagger.support.ResJson;
 import io.swagger.annotations.Api;

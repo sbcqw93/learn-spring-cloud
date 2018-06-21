@@ -9,8 +9,8 @@
 
     <groupId>com.csc.learn.bootserver</groupId>
     <artifactId>learn-boot-server</artifactId>
-    <!--<packaging>jar</packaging>-->
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
+    <!--<packaging>war</packaging>-->
 
     <name>learn-boot-server</name>
     <url>http://maven.apache.org</url>
