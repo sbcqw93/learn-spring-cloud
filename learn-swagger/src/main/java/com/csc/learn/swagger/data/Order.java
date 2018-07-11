@@ -3,16 +3,19 @@ package com.csc.learn.swagger.data;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.io.Serializable;
+
 /**
- * Created by Administrator on 2018/6/13 0013.
+ * Created by Lihuan on 2018/6/13 0013.
  */
 @ApiModel(value = "Order")
 public class Order {
-    @ApiModelProperty(name = "orderId")
+
+    @ApiModelProperty(value = "orderId")
     private String orderId;
-    @ApiModelProperty(name = "price")
+    @ApiModelProperty(value = "price")
     private String price;
-    @ApiModelProperty(name = "productName")
+    @ApiModelProperty(value = "productName")
     private String productName;
 
     public Order() {

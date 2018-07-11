@@ -13,7 +13,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
 /**
- * Created by Administrator on 2018/6/12 0012.
+ * Created by Lihuan on 2018/6/12 0012.
  */
 @Configuration
 @PropertySource("classpath:swagger.properties")

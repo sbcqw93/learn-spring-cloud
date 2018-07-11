@@ -1,22 +1,28 @@
 package com.csc.learn.swagger.controller;
 
-import com.csc.learn.swagger.data.Order;
-import com.csc.learn.swagger.data.User;
-import com.csc.learn.swagger.service.OrderService;
-import com.csc.learn.swagger.support.ResJson;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.csc.learn.swagger.data.Order;
+import com.csc.learn.swagger.service.OrderService;
+import com.csc.learn.swagger.support.ResJson;
 
 /**
- * Created by Administrator on 2018/6/13 0013.
+ * Created by Lihuan on 2018/6/13 0013.
  */
 @RestController
 @RequestMapping(value = "order")
-@Api(description = "订单接口")
+@Api("订单接口")
 public class OrderController {
 
     @Autowired

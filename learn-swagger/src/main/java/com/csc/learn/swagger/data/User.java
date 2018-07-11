@@ -3,17 +3,20 @@ package com.csc.learn.swagger.data;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+import java.io.Serializable;
+
 /**
- * Created by Administrator on 2018/6/12 0012.
+ * Created by Lihuan on 2018/6/12 0012.
  */
-@ApiModel(value = "User")
+@ApiModel(value = "用户对象")
 public class User {
+
     private int id;
-    @ApiModelProperty(name = "userName")
+    @ApiModelProperty(value = "用户名称")
     private String userName;
-    @ApiModelProperty(name = "sex")
+    @ApiModelProperty(value = "性别:1表示男,0表示女")
     private int sex;
-    @ApiModelProperty(name = "phone")
+    @ApiModelProperty(value = "手机号码")
     private String phone;
 
     public User() {
