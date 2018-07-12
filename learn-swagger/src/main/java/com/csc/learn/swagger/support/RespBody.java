@@ -16,11 +16,8 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @ApiModel("接口返回数据")
 public class RespBody<T> {
-
     @ApiModelProperty(value = "状态:1表示失败, 0表示成功")
-    private int code;
-    @ApiModelProperty(value = "处理提示")
-    private String msg;
+    private int status;
     @ApiModelProperty(value = "返回数据集")
     private T data;
 
@@ -30,21 +27,17 @@ public class RespBody<T> {
     private RespBody() {
     }
 
-    private RespBody(int code, String msg) {
-        this.code = code;
-        this.msg = msg;
+    private RespBody(int status) {
+        this.status = status;
     }
 
-    private RespBody(int code, String msg, T data) {
-        this(code, msg);
+    private RespBody(int status, T data) {
+        this(status);
         this.data = data;
     }
 
     @ApiModel("自定义返回错误码")
-    static class DefaultErrorRespBody implements Serializable {
-
-        private static final long serialVersionUID = -1L;
-
+    static class DefaultErrorRespBody {
         @ApiModelProperty(value = "错误码")
         private String errorCode;
         @ApiModelProperty(value = "错误信息")
@@ -84,7 +77,7 @@ public class RespBody<T> {
         if (null == errorMsg) {
             errorMsg = "";
         }
-        return new RespBody(failure, "自定义错误", new DefaultErrorRespBody(errorCode, errorMsg));
+        return new RespBody(failure, new DefaultErrorRespBody(errorCode, errorMsg));
     }
 
     /**
@@ -103,23 +96,15 @@ public class RespBody<T> {
      * @param data
      */
     public static <T> RespBody success(T data) {
-        return new RespBody(success, "", data);
+        return new RespBody(success, data);
     }
 
-    public int getCode() {
-        return code;
+    public int getStatus() {
+        return status;
     }
 
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
+    public void setStatus(int status) {
+        this.status = status;
     }
 
     public T getData() {
@@ -132,7 +117,7 @@ public class RespBody<T> {
 
     @Override
     public String toString() {
-        return "Reb [code=" + code + ", msg=" + msg + ", data=" + data + "]";
+        return "Reb [status=" + status + ", data=" + data + "]";
     }
 
 }

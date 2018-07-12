@@ -31,15 +31,17 @@ public class UserController {
     @ApiOperation(value = "获取用户详细信息", notes = "根据url的id来获取用户详细信息")
     @ApiImplicitParam(name = "userId", value = "用户ID", required = true, dataType = "int", paramType = "path", defaultValue = "100")
     public String queryUser(@PathVariable Integer userId) {
-    	return ResJson.success(userService.queryUserById(userId));
+        return ResJson.success(userService.queryUserById(userId));
+        //return ResJson.failure("aa", "dd");
     }
-    
+
     @ResponseBody
     @RequestMapping(value = "queryUser2/{userId}", method = RequestMethod.GET)
     @ApiOperation(value = "获取用户详细信息", notes = "根据url的id来获取用户详细信息")
     @ApiImplicitParam(name = "userId", value = "用户ID", required = true, dataType = "int", paramType = "path", defaultValue = "100")
     public RespBody<User> queryUser2(@PathVariable Integer userId) {
-    	return RespBody.success(userService.queryUserById(userId));
+        return RespBody.success(userService.queryUserById(userId));
+        //return RespBody.failure("aa", "dd");
     }
 
     @ResponseBody
