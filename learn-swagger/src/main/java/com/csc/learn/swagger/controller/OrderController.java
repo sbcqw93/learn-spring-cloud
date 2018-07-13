@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.csc.learn.swagger.data.Order;
 import com.csc.learn.swagger.service.OrderService;
 import com.csc.learn.swagger.support.ResJson;
+import com.csc.learn.swagger.support.RespBody;
 
 /**
  * Created by Lihuan on 2018/6/13 0013.
@@ -33,7 +34,7 @@ public class OrderController {
     @ApiOperation(value = "获取订单详细信息", notes = "根据url的id来获取订单详细信息")
     @ApiImplicitParam(name = "orderId", value = "订单编号", required = true, dataType = "string", paramType = "path", defaultValue = "B1001")
     public String queryOrder(@PathVariable String orderId) {
-        return ResJson.success(orderService.queryOrderById(orderId));
+        return RespBody.success("查询成功", orderService.queryOrderById(orderId));
     }
 
     @ResponseBody
@@ -46,6 +47,6 @@ public class OrderController {
     })
     public String saveOrderByFields(@RequestParam String orderId, @RequestParam String price, @RequestParam String productName) {
         Order order = new Order(orderId, price, productName);
-        return ResJson.success(orderService.saveOrder(order));
+        return RespBody.success("保存成功", orderService.saveOrder(order));
     }
 }
